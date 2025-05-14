@@ -56,24 +56,25 @@ The data sources for the company are:
 
 `WoWcinema_data`
 
-| Column Name               | Data Type      | Description                                      |
-| ------------------------- | -------------- | ------------------------------------------------ |
-| `log_id`                  | `VARCHAR(50)`  | Unique ID for each activity/session log          |
-| `user_id`                 | `VARCHAR(20)`  | Unique identifier for each user                  |
-| `username`                | `VARCHAR(50)`  | Platform username                                |
-| `first_name`              | `VARCHAR(100)` | User’s first name                                |
-| `last_name`               | `VARCHAR(100)` | User’s last name                                 |
-| `status_subscription`     | `VARCHAR(10)`  | User subscription status (Active/Inactive)       |
-| `subscription_plan`       | `VARCHAR(20)`  | Plan type (Basic,Standard,Premium)               |
-| `subscription_start_date` | `DATE`         | Start date of the current subscription           |
-| `iban`                    | `VARCHAR(45)`  | Simulated bank account number                    |
-| `title_name`              | `VARCHAR(255)` | Movie/Serial name                                |
-| `watch_timestamp`         | `TIMESTAMP`    | how long did user watched of a specific title    |
-| `is_completed`            | `INT`          | Whether the movie was fully watched (1-yes/0-no) |
-| `rating_given`            | `FLOAT`        | User rating (0-10)                               |
-| `react_type`              | `INT`          | Reaction type (like/nothing/dislike(1/0/-1))     |
-| `country`                 | `VARCHAR(70)`  | Country where the session took place             |
-| `end_session`             | `Timestamp`    | End time of the viewing session                  |
+| Column Name               | Data Type      | Description                                        |
+| ------------------------- | -------------- | -------------------------------------------------- |
+| `log_id`                  | `VARCHAR(50)`  | Unique ID for each activity/session log            |
+| `user_id`                 | `VARCHAR(20)`  | Unique identifier for each user                    |
+| `username`                | `VARCHAR(50)`  | Platform username                                  |
+| `first_name`              | `VARCHAR(100)` | User’s first name                                  |
+| `last_name`               | `VARCHAR(100)` | User’s last name                                   |
+| `subscription_status`     | `VARCHAR(10)`  | Subscription status (Active/Inactive)              |
+| `subscription_plan`       | `VARCHAR(20)`  | Plan type (Basic, Standard, Premium)               |
+| `subscription_start_date` | `DATE`         | Start date of the user’s subscription              |
+| `iban`                    | `VARCHAR(45)`  | Simulated bank account number                      |
+| `title_name`              | `VARCHAR(255)` | Watched title name (movie or series)               |
+| `watch_start_time`        | `TIMESTAMP`    | When the viewing session started                   |
+| `watch_end_time`          | `TIMESTAMP`    | When the viewing session ended                     |
+| `session_duration_min`    | `INT`          | Total session duration in minutes                  |
+| `is_completed`            | `INT`          | Whether the title was fully watched (1-yes / 0-no) |
+| `rating_given`            | `FLOAT`        | User rating for the title (scale 0–10)             |
+| `reaction_type`           | `INT`          | Reaction (1 = like, 0 = neutral, -1 = dislike)     |
+| `country`                 | `VARCHAR(70)`  | Country where the user watched the title           |
 
 #### **Netflix Movies and TV Shows (Kaggle) source**
 
@@ -94,10 +95,10 @@ The data sources for the company are:
 
 | Column Name          | Data Type      | Description                                      | Source File          |
 | -------------------- | -------------- | ------------------------------------------------ | -------------------- |
-| `idm_titleId`        | `VARCHAR(500)` | Unique identifier for the title                  | title.akas.tsv.gz    |
-| `idm_title`          | `VARCHAR(255)` | Title name (ex: movie or TV series)              | title.akas.tsv.gz    |
-| `idm_titleType`      | `VARCHAR(50)`  | Type of title (ex: movie, short, tvSeries, etc.) | title.basics.tsv.gz  |
-| `idm_runtimeMinutes` | `VARCHAR(50)`  | Runtime duration ( minutes/seasons)              | title.basics.tsv.gz  |
-| `idm_genres`         | `VARCHAR(500)` | Up to three genres associated with the title     | title.basics.tsv.gz  |
-| `idm_averageRating`  | `FLOAT`        | Average user rating on IMDb 0-10                 | title.ratings.tsv.gz |
-| `idm_numVotes`       | `INT`          | Total number of user votes received              | title.ratings.tsv.gz |
+| `imd_titleId`        | `VARCHAR(500)` | Unique identifier for the title                  | title.akas.tsv.gz    |
+| `imd_title`          | `VARCHAR(255)` | Title name (ex: movie or TV series)              | title.akas.tsv.gz    |
+| `imd_titleType`      | `VARCHAR(50)`  | Type of title (ex: movie, short, tvSeries, etc.) | title.basics.tsv.gz  |
+| `imd_runtimeMinutes` | `VARCHAR(50)`  | Runtime duration ( minutes/seasons)              | title.basics.tsv.gz  |
+| `imd_genres`         | `VARCHAR(500)` | Up to three genres associated with the title     | title.basics.tsv.gz  |
+| `imd_averageRating`  | `FLOAT`        | Average user rating on IMDb 0-10                 | title.ratings.tsv.gz |
+| `imd_numVotes`       | `INT`          | Total number of user votes received              | title.ratings.tsv.gz |
