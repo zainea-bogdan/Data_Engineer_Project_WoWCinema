@@ -59,7 +59,6 @@ The data sources for the company are:
 | Column Name               | Data Type      | Description                                      |
 | ------------------------- | -------------- | ------------------------------------------------ |
 | `log_id`                  | `VARCHAR(50)`  | Unique ID for each activity/session log          |
-| `session_duration`        | `INT`          | Duration of the session in minutes               |
 | `user_id`                 | `VARCHAR(20)`  | Unique identifier for each user                  |
 | `username`                | `VARCHAR(50)`  | Platform username                                |
 | `first_name`              | `VARCHAR(100)` | User’s first name                                |
@@ -67,14 +66,14 @@ The data sources for the company are:
 | `status_subscription`     | `VARCHAR(10)`  | User subscription status (Active/Inactive)       |
 | `subscription_plan`       | `VARCHAR(20)`  | Plan type (Basic,Standard,Premium)               |
 | `subscription_start_date` | `DATE`         | Start date of the current subscription           |
-| `iban`                    | `VARCHAR(34)`  | Simulated bank account number                    |
-| `movie_name`              | `VARCHAR(255)` | Movie name                                       |
-| `watch_timestamp`         | `TIMESTAMP`    | When the viewing session happened                |
+| `iban`                    | `VARCHAR(45)`  | Simulated bank account number                    |
+| `title_name`              | `VARCHAR(255)` | Movie/Serial name                                |
+| `watch_timestamp`         | `TIMESTAMP`    | how long did user watched of a specific title    |
 | `is_completed`            | `INT`          | Whether the movie was fully watched (1-yes/0-no) |
 | `rating_given`            | `FLOAT`        | User rating (0-10)                               |
 | `react_type`              | `INT`          | Reaction type (like/nothing/dislike(1/0/-1))     |
 | `country`                 | `VARCHAR(70)`  | Country where the session took place             |
-| `start_time`              | `Timestamp`    | Start time of the viewing session                |
+| `end_session`             | `Timestamp`    | End time of the viewing session                  |
 
 #### **Netflix Movies and TV Shows (Kaggle) source**
 
