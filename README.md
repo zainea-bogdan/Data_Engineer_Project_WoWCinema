@@ -90,14 +90,16 @@ Sure! Here's a clearer and more professional reformulation:
 
 `netflix_kaggle_data`
 
-| Column Name              | Data Type       | Description                                |
-| ------------------------ | --------------- | ------------------------------------------ |
-| `netf_title`             | `VARCHAR(255)`  | title name(title=movie/serial)             |
-| `netf_director`          | `VARCHAR(255)`  | Movie Director                             |
-| `netf_data_added`        | `VARCHAR(50)`   | Date when movie was uploaded on netflix    |
-| `netf_duration`          | `VARCHAR(15)`   | Unit of measure(movie-min,serials-seasons) |
-| `netf_genre`             | `VARCHAR(255)`  | Title genre                                |
-| `netf_movie_description` | `VARCHAR(1000)` | Title description                          |
+| Column Name              | Data Type      | Description                                |
+| ------------------------ | -------------- | ------------------------------------------ |
+| `netf_title`             | `VARCHAR(255)` | title name(title=movie/serial)             |
+| `netf_title_type`        | `VARCHAR(10)`  | title category(movie/tv show)              |
+| `netf_director`          | `VARCHAR(255)` | Movie Director                             |
+| `netf_data_added`        | `VARCHAR(50)`  | Date when movie was uploaded on netflix    |
+| `netf_release_year`      | `INT`          | Title release year                         |
+| `netf_duration`          | `VARCHAR(15)`  | Unit of measure(movie-min,serials-seasons) |
+| `netf_genre`             | `VARCHAR(255)` | Title genre list (minim 1)                 |
+| `netf_movie_description` | `text`         | Title description                          |
 
 #### **IMDb Non-Commercial Datasets source**
 
