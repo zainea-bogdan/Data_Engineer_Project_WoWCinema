@@ -56,10 +56,6 @@ The data sources for the company are:
 
 `WoWcinema_data`
 
-Sure! Here's a clearer and more professional reformulation:
-
----
-
 - A log is considered **“open”** when a user begins watching a title on the platform. It is considered **“closed”** under any of the following conditions:
 
   - The user leaves the platform before completing the movie.
