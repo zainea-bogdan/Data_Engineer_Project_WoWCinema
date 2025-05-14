@@ -74,6 +74,7 @@ The data sources for the company are:
 | `rating_given`            | `FLOAT`        | User rating (0-10)                               |
 | `react_type`              | `INT`          | Reaction type (like/nothing/dislike(1/0/-1))     |
 | `country`                 | `VARCHAR(70)`  | Country where the session took place             |
+| `start_time`              | `Timestamp`    | Start time of the viewing session                |
 
 #### **Netflix Movies and TV Shows (Kaggle) source**
 
