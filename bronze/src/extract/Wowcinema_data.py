@@ -97,7 +97,7 @@ def load_data(data:list):
     conn = psycopg2.connect(
         dbname="postgres",
         user="postgres",
-        password="kizi1234",
+        password="placeholder",
         host="localhost",
         port=5432
     )
