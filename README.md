@@ -1,4 +1,4 @@
-# First_Data_Engineer_Personal_Project
+# Data_Engineer_Project_WoWCinema
 
 ## Fictive Scenario
 
