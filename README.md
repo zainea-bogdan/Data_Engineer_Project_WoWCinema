@@ -8,37 +8,46 @@ You are a Data Engineer in the WoWCinema company. The WoWCinema company is a Rom
 
 ---
 
-1. **Movie details** - Aggregate movie-related data and content details.
-2. **Movies insights** - Track trends in movie popularity based on rating and viewers feedback.
-3. **Popularity trends** - Provide benchmarks and comparisons for different movies, from different platforms.
-4. **Movie ranking** - Determine which movies are most popular, using available metrics.
+1. **Movie Completion Analytics** – Track how often users complete movies and what influences completion rate.
+2. **Personalized Recommendations** – Provide content suggestions based on users’ viewing habits and preferences.
+3. **Churn Prediction & Retention** – Identify inactive or disengaged users and drive proactive retention.
+4. **Genre Popularity by Region** – Analyze movie genre trends across different countries.
+5. **Subscription Plan Optimization** – Evaluate which subscription tiers perform best based on user activity and duration.
 
 #### Reports
 
 ---
 
-- **Numbers of likes** per movie
-- **Numbers of dislikes** per movie
-- **Top 10 movies** by user rating
-- **Least 10 movies** by user rating
-- **Number of users** by subscription plan
+- **Completion rate per movie**
+- **Top 10 genres by total watch time**
+- **User churn risk list** (inactive or low engagement users)
+- **Most-watched movies in the last 30 days**
+- **Average session duration by subscription plan**
 
 #### Dashboards
 
 ---
 
-- **Top 10 movies** by number of likes(monthly)
-- **Number of new users** (monthly)
-- **Estimated income** by the end of the month
-- **Daily average of active users** for each month
+- **Top 10 completed movies** (monthly)
+- **Most trending genres by country** (heatmap)
+- **New subscribers vs churned users** (monthly growth)
+- **Estimated monthly revenue by subscription plan**
+- **User engagement score** (daily/weekly average of session duration + reactions)
 
 #### KPIs
 
 ---
 
-- Total number of active users (measures how many users engaged with the platform in a given period)
-- Monthly user growth rate (measures how fast the user base is increasing month over month)
-- Top subscription plan by user count ( identifies the most popular plan (ex: Basic, Standard, Premium)).
+- **Average movie completion rate**
+  - Formula: total completed sessions ÷ total sessions
+- **Monthly active users**
+  - Unique users engaging per month
+- **Churn rate**
+  - Formula: users inactive >30 days ÷ total active users
+- **Genre watch share**
+  - Formula: genre watch time ÷ total watch time
+- **Top subscription plan by revenue**
+  - Plan revenue = plan price × number of users
 
 ## Data Warehouse Design
 
