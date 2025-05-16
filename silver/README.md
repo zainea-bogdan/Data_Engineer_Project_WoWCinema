@@ -57,12 +57,12 @@ This table stores information about each title (movie or show) available on the 
 
 This table describes the different types of subscription plans available to users.
 
-| Column Name | Data Type | Description | Bronze Source |
-| ------------------ | ----------- | ------------------------------------------- | ------------- | bronze/subscription_plan/
-| subscription_id | INT | Unique ID for the subscription plan |bronze/subscription_plan/subscription_plan_id |
-| subscription_plan | VARCHAR(15) | Name of the plan (Basic, Standard, Premium) | bronze/subscription_plan/subscription_plan|
-| subscription_price | FLOAT | Monthly price of the subscription |bronze/subscription_plan/subscription_price |
-| currency_code | VARCHAR(3) | Currency used for pricing (e.g., USD, EUR) |bronze/subscription_plan/currency_code |
+| Column Name        | Data Type   | Description                                 | Bronze Source                                 |
+| ------------------ | ----------- | ------------------------------------------- | --------------------------------------------- |
+| subscription_id    | INT         | Unique ID for the subscription plan         | bronze/subscription_plan/subscription_plan_id |
+| subscription_plan  | VARCHAR(15) | Name of the plan (Basic, Standard, Premium) | bronze/subscription_plan/subscription_plan    |
+| subscription_price | FLOAT       | Monthly price of the subscription           | bronze/subscription_plan/subscription_price   |
+| currency_code      | VARCHAR(3)  | Currency used for pricing (e.g., USD, EUR)  | bronze/subscription_plan/currency_code        |
 
 ### `dim_reaction`
 
