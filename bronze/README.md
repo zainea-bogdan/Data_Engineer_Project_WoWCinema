@@ -2,7 +2,23 @@
 
 ## Schema
 
-- bronze_wowcinema
+-Name: bronze_wowcinema
+
+### Create Tables
+
+- To create `WoWcinema_data`, run the query from `bronze/src/tables_queries/create_WoWcinema_data_table.sql`
+- To create `subscription_plan`, run the query from `bronze/src/tables_queries/create_subscription_plan_table.sql`
+- To create `netflix_kaggle_data`, run the query from `bronze/src/tables_queries/create_netflix_kaggle_data.sql`
+- To create `IMDb_noncom_basiscs`, run the query from `bronze/src/tables_queries/create_IMDb_noncom_basiscs.sql`
+- To create `IMDb_noncom_ratings`, run the query from `bronze/src/tables_queries/create_IMDb_noncom_ratings.sql`
+
+### Insert Data
+
+- To insert data into `WoWcinema_data`, run the query from `bronze/src/tables_queries/insert_WoWcinema_data.sql`
+- To insert data into `subscription_plan`, run the query from `bronze/src/tables_queries/insert_subscription_plan.sql`
+- To insert data into `netflix_kaggle_data`, run the query from `bronze/src/tables_queries/insert_netflix_kaggle_data.sql`
+- To insert data into `IMDb_noncom_basiscs`, run the query from `bronze/src/tables_queries/insert_IMDb_noncom_basiscs.sql`
+- To insert data into `IMDb_noncom_ratings`, run the query from `bronze/src/tables_queries/insert_IMDb_noncom_ratings.sql`
 
 ## Tables
 
