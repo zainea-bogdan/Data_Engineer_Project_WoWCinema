@@ -52,67 +52,38 @@ It has a server `WoWCinema` and a database named `WoWCinema`.
 
 ### Sources
 
+---
+
 The data sources for the company are:
 
 - **WoWCinema Platform** – Own platform data, which includes user activity, interactions (likes/dislikes), and subscription information.
 - [**Netflix Movies and TV Shows (Kaggle)**](https://www.kaggle.com/datasets/shivamb/netflix-shows) – Public dataset providing catalog metadata such as title, cast, type, release year, and description.
 - [**IMDb Non-Commercial Datasets**](https://developer.imdb.com/non-commercial-datasets/) – Official IMDb datasets available for personal and academic use, offering structured data on titles, ratings, crew, cast, and more.
 
-#### **WoWCinema source**
+PS: For each source listed above, i have created a specific table in the bronze stage, more details in [bronze stage README.md](./bronze/README_bronze.md)
 
-`WoWcinema_data`
+### Schemas
 
-- A log is considered **“open”** when a user begins watching a title on the platform. It is considered **“closed”** under any of the following conditions:
+---
 
-  - The user leaves the platform before completing the movie.
-  - The user finishes watching the movie, scrolls a little bit more afterwards and eventually exits the platform, without starting a new movie/serial.
-  - The user finishes the movie and continues browsing, but upon clicking another title, a **new log is created**, and the current one is closed.
+- **bronze_wowschema**
+  - Purpose: This schema represents the initial storage for raw, unprocessed data, which is directly extracted from all 3 sources mentioned above.
+- **silver_wowcinema**
+  - Purpose: This schema serves to store cleaned and transformed data, ready for further processing down the pipeline.
+- **gold_wowschema**
+  - Purpose: this schema serves to store the final, fully processed data that is ready for further analytics and reporting.
 
-- Note: In earlier versions, there was an is_completed column. However, I decided to remove it and instead derive completion status through calculations in later stages of the pipeline (likely during the silver layer transformation).
+### ETL pipeline
 
-| Column Name               | Data Type      | Description                                        |
-| ------------------------- | -------------- | -------------------------------------------------- |
-| `log_id`                  | `VARCHAR(50)`  | Unique ID for each activity/session log            |
-| `username`                | `VARCHAR(100)` | Platform username                                  |
-| `first_name`              | `VARCHAR(100)` | User’s first name                                  |
-| `last_name`               | `VARCHAR(100)` | User’s last name                                   |
-| `subscription_status`     | `INT`          | Subscription status (Active/Inactive - 1/0)        |
-| `subscription_plan`       | `INT`          | Plan type: 1-Basic/2-Standard/3-Premium            |
-| `subscription_start_date` | `DATE`         | Start date of the user’s subscription              |
-| `iban`                    | `VARCHAR(45)`  | Simulated bank account number                      |
-| `title_name`              | `VARCHAR(255)` | Watched title name (movie or series)               |
-| `watch_start_time`        | `TIMESTAMP`    | When the viewing session started                   |
-| `watch_end_time`          | `TIMESTAMP`    | When the viewing session ended                     |
-| `session_duration_min`    | `FLOAT`        | Total session duration in minutes                  |
-| `rating_given`            | `FLOAT`        | User rating for the title (scale 0–10)             |
-| `reaction_type`           | `INT`          | Reaction (1 = like, 0 = neutral, -1 = dislike)     |
-| `country_code`            | `VARCHAR(70)`  | Country code from where the user watched the title |
+---
 
-#### **Netflix Movies and TV Shows (Kaggle) source**
+- [Extract](./bronze/src/extract/)
 
-`netflix_kaggle_data`
+  - Scope: This process is performed at the bronze tier level (on raw data), where data is ingested and loaded into raw staging tables without transformations.
 
-| Column Name              | Data Type      | Description                                |
-| ------------------------ | -------------- | ------------------------------------------ |
-| `netf_title`             | `VARCHAR(255)` | title name(title=movie/serial)             |
-| `netf_title_type`        | `VARCHAR(10)`  | title category(movie/tv show)              |
-| `netf_director`          | `VARCHAR(255)` | Movie Director                             |
-| `netf_data_added`        | `VARCHAR(50)`  | Date when movie was uploaded on netflix    |
-| `netf_release_year`      | `INT`          | Title release year                         |
-| `netf_duration`          | `VARCHAR(15)`  | Unit of measure(movie-min,serials-seasons) |
-| `netf_genre`             | `VARCHAR(255)` | Title genre list (minim 1)                 |
-| `netf_movie_description` | `text`         | Title description                          |
+- Transform
 
-#### **IMDb Non-Commercial Datasets source**
+  - Scope: This process is performed at the silver tier level (on partially cleaned data), where the raw data is cleaned, standardized, and structured into logically related tables.
 
-`IMDb_noncom_data`
-
-| Column Name          | Data Type      | Description                                      | Source File          |
-| -------------------- | -------------- | ------------------------------------------------ | -------------------- |
-| `imd_titleId`        | `VARCHAR(500)` | Unique identifier for the title                  | title.akas.tsv.gz    |
-| `imd_title`          | `VARCHAR(255)` | Title name (ex: movie or TV series)              | title.akas.tsv.gz    |
-| `imd_titleType`      | `VARCHAR(50)`  | Type of title (ex: movie, short, tvSeries, etc.) | title.basics.tsv.gz  |
-| `imd_runtimeMinutes` | `VARCHAR(50)`  | Runtime duration ( minutes/seasons)              | title.basics.tsv.gz  |
-| `imd_genres`         | `VARCHAR(500)` | Up to three genres associated with the title     | title.basics.tsv.gz  |
-| `imd_averageRating`  | `FLOAT`        | Average user rating on IMDb 0-10                 | title.ratings.tsv.gz |
-| `imd_numVotes`       | `INT`          | Total number of user votes received              | title.ratings.tsv.gz |
+- Load
+  - Scope: This process is performed at the gold tier level, where final views and business-ready tables are created to support the core business goals, reports, dashboards, and KPIs.
