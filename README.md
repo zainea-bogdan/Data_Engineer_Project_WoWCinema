@@ -9,10 +9,9 @@ You are a Data Engineer in the WoWCinema company. The WoWCinema company is a Rom
 ---
 
 1. **Movie Completion Analytics** – Track how often users complete movies and what influences completion rate.
-2. **Personalized Recommendations** – Provide content suggestions based on users’ viewing habits and preferences.
-3. **Churn Prediction & Retention** – Identify inactive or disengaged users and drive proactive retention.
-4. **Genre Popularity by Region** – Analyze movie genre trends across different countries.
-5. **Subscription Plan Optimization** – Evaluate which subscription tiers perform best based on user activity and duration.
+2. **Churn Prediction & Retention** – Identify inactive or disengaged users and drive proactive retention.
+3. **Genre Popularity by Region** – Analyze movie genre trends across different countries.
+4. **Subscription Plan Optimization** – Evaluate which subscription tiers perform best based on user activity and duration.
 
 #### Reports
 
@@ -21,7 +20,6 @@ You are a Data Engineer in the WoWCinema company. The WoWCinema company is a Rom
 - **Completion rate per movie**
 - **Top 10 genres by total watch time**
 - **User churn risk list** (inactive or low engagement users)
-- **Most-watched movies in the last 30 days**
 - **Average session duration by subscription plan**
 
 #### Dashboards
@@ -32,7 +30,6 @@ You are a Data Engineer in the WoWCinema company. The WoWCinema company is a Rom
 - **Most trending genres by country** (heatmap)
 - **New subscribers vs churned users** (monthly growth)
 - **Estimated monthly revenue by subscription plan**
-- **User engagement score** (daily/weekly average of session duration + reactions)
 
 #### KPIs
 
