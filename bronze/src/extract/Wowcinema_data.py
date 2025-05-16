@@ -55,7 +55,7 @@ def generate_synthethic_data()->list:
 
 
     watch_start_time = synthethic.date_time()
-    #making sure that 
+    #making sure that we don t have users that watched before the platform was even made:))
     while(watch_start_time.year<2000):
          watch_start_time = synthethic.date_time()
 

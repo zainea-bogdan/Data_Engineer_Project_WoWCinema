@@ -62,22 +62,29 @@
 
 ### **IMDb Non-Commercial Datasets source**
 
-`IMDb_noncom_data`
+`IMDb_noncom_basiscs`
 
-| Column Name          | Data Type      | Description                                      | Source File          |
-| -------------------- | -------------- | ------------------------------------------------ | -------------------- |
-| `imd_titleId`        | `VARCHAR(500)` | Unique identifier for the title                  | title.akas.tsv.gz    |
-| `imd_title`          | `VARCHAR(255)` | Title name (ex: movie or TV series)              | title.akas.tsv.gz    |
-| `imd_titleType`      | `VARCHAR(25)`  | Type of title (ex: movie, short, tvSeries, etc.) | title.basics.tsv.gz  |
-| `imd_runtimeMinutes` | `VARCHAR(50)`  | Runtime duration ( minutes/seasons)              | title.basics.tsv.gz  |
-| `imd_genres`         | `text`         | Up to three genres associated with the title     | title.basics.tsv.gz  |
-| `imd_averageRating`  | `FLOAT`        | Average user rating on IMDb 0-10                 | title.ratings.tsv.gz |
-| `imd_numVotes`       | `INT`          | Total number of user votes received              | title.ratings.tsv.gz |
+| Column Name          | Data Type      | Description                                      | Source File         |
+| -------------------- | -------------- | ------------------------------------------------ | ------------------- |
+| `imd_tconst `        | `VARCHAR(20)`  | Unique identifier for the title                  | title.basics.tsv.gz |
+| `imd_primaryTitle `  | `VARCHAR(255)` | Title name (ex: movie or TV series)              | title.basics.tsv.gz |
+| `imd_titleType`      | `VARCHAR(25)`  | Type of title (ex: movie, short, tvSeries, etc.) | title.basics.tsv.gz |
+| `startYear`          | `int`          | release year of the title                        | title.basics.tsv.gz |
+| `imd_runtimeMinutes` | `VARCHAR(50)`  | Runtime duration ( minutes/seasons)              | title.basics.tsv.gz |
+| `imd_genres`         | `text`         | Up to three genres associated with the title     | title.basics.tsv.gz |
+
+`IMDb_noncom_ratings`
+
+| Column Name         | Data Type     | Description                         | Source File          |
+| ------------------- | ------------- | ----------------------------------- | -------------------- |
+| `imd_tconst `       | `VARCHAR(20)` | Unique identifier for the title     | title.ratings.tsv.gz |
+| `imd_averageRating` | `FLOAT`       | Average user rating on IMDb 0-10    | title.ratings.tsv.gz |
+| `imd_numVotes`      | `INT`         | Total number of user votes received | title.ratings.tsv.gz |
 
 ## Extract process
 
 - Data is extracted from the `WoWCinema Platform`, `Netflix Movies and TV Shows (Kaggle)`, `IMDb Non-Commercial Datasets`.
 - The script `./bronze/src/extract/WoWcinema.py` handles the "extraction" (more correctly the generation) of synthetic data.
 - The script `./bronze/src/extract/Netflix_kaggle_data.py` handles the extraction of data from the Netflix movies Kaggle dataset.
-- The script `./bronze/src/extract/IMDb_noncom_data.py` handles the extraction of data from the IMDb non-comercial datasets, in concordance with the license of the source.
+- The script `./bronze/src/extract/IMDb_noncom_basiscs.py` handles the extraction of data from the IMDb non-comercial datasets, in concordance with the license of the source1.
 - The script `./bronze/src/extract/Subscription_plan_data.py` handles the inserting of data into subscription plan table. (hardcoded the values unfortunately)

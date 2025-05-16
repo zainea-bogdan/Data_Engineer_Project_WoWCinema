@@ -58,9 +58,11 @@ The data sources for the company are:
 
 - **WoWCinema Platform** – Own platform data, which includes user activity, interactions (likes/dislikes), and subscription information.
 - [**Netflix Movies and TV Shows (Kaggle)**](https://www.kaggle.com/datasets/shivamb/netflix-shows) – Public dataset providing catalog metadata such as title, cast, type, release year, and description.
-- [**IMDb Non-Commercial Datasets**](https://developer.imdb.com/non-commercial-datasets/) – Official IMDb datasets available for personal and academic use, offering structured data on titles, ratings, crew, cast, and more.
+- [**IMDb Non-Commercial Datasets**](https://developer.imdb.com/non-commercial-datasets/) – Official IMDb non-comercial datasets available, under the IMDb Non-Commercial Data Licens, for personal and academic use; offering structured data on titles, ratings, crew, cast, and more, which will be used only for personal testing.
 
-PS: For each source listed above, i have created a specific table in the bronze stage, more details in [bronze stage README.md](./bronze/README.md)
+PS: For each source listed above, i have created a specific table in the bronze stage folder, more details in [bronze stage README.md](./bronze/README.md)
+
+Note: In accordance with the IMDb Non-Commercial Data License, redistribution of IMDb datasets is not permitted. Therefore, to use the scripts related to IMDb data in the Bronze tier of this project, please create a local folder named IMDb within your project directory and manually place the title.basics.tsv and title.ratings.tsv files there. These files must be downloaded directly from IMDb's official non-commercial dataset page. Thank you for your understanding!
 
 ### Schemas
 
