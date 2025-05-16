@@ -68,9 +68,9 @@
 | -------------------- | -------------- | ------------------------------------------------ | -------------------- |
 | `imd_titleId`        | `VARCHAR(500)` | Unique identifier for the title                  | title.akas.tsv.gz    |
 | `imd_title`          | `VARCHAR(255)` | Title name (ex: movie or TV series)              | title.akas.tsv.gz    |
-| `imd_titleType`      | `VARCHAR(50)`  | Type of title (ex: movie, short, tvSeries, etc.) | title.basics.tsv.gz  |
+| `imd_titleType`      | `VARCHAR(25)`  | Type of title (ex: movie, short, tvSeries, etc.) | title.basics.tsv.gz  |
 | `imd_runtimeMinutes` | `VARCHAR(50)`  | Runtime duration ( minutes/seasons)              | title.basics.tsv.gz  |
-| `imd_genres`         | `VARCHAR(500)` | Up to three genres associated with the title     | title.basics.tsv.gz  |
+| `imd_genres`         | `text`         | Up to three genres associated with the title     | title.basics.tsv.gz  |
 | `imd_averageRating`  | `FLOAT`        | Average user rating on IMDb 0-10                 | title.ratings.tsv.gz |
 | `imd_numVotes`       | `INT`          | Total number of user votes received              | title.ratings.tsv.gz |
 
@@ -80,4 +80,4 @@
 - The script `./bronze/src/extract/WoWcinema.py` handles the "extraction" (more correctly the generation) of synthetic data.
 - The script `./bronze/src/extract/Netflix_kaggle_data.py` handles the extraction of data from the Netflix movies Kaggle dataset.
 - The script `./bronze/src/extract/IMDb_noncom_data.py` handles the extraction of data from the IMDb non-comercial datasets, in concordance with the license of the source.
-- The script `./bronze/src/extract/Subscription_plan_data.py` handles the inserting of data manually into subscription plan table.
+- The script `./bronze/src/extract/Subscription_plan_data.py` handles the inserting of data into subscription plan table. (hardcoded the values unfortunately)
