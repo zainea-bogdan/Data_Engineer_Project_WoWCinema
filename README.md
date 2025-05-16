@@ -60,7 +60,7 @@ The data sources for the company are:
 - [**Netflix Movies and TV Shows (Kaggle)**](https://www.kaggle.com/datasets/shivamb/netflix-shows) – Public dataset providing catalog metadata such as title, cast, type, release year, and description.
 - [**IMDb Non-Commercial Datasets**](https://developer.imdb.com/non-commercial-datasets/) – Official IMDb datasets available for personal and academic use, offering structured data on titles, ratings, crew, cast, and more.
 
-PS: For each source listed above, i have created a specific table in the bronze stage, more details in [bronze stage README.md](./bronze/README_bronze.md)
+PS: For each source listed above, i have created a specific table in the bronze stage, more details in [bronze stage README.md](./bronze/README.md)
 
 ### Schemas
 
