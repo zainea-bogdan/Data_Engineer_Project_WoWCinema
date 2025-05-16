@@ -80,3 +80,4 @@
 - The script `./bronze/src/extract/WoWcinema.py` handles the "extraction" (more correctly the generation) of synthetic data.
 - The script `./bronze/src/extract/Netflix_kaggle_data.py` handles the extraction of data from the Netflix movies Kaggle dataset.
 - The script `./bronze/src/extract/IMDb_noncom_data.py` handles the extraction of data from the IMDb non-comercial datasets, in concordance with the license of the source.
+- The script `./bronze/src/extract/Subscription_plan_data.py` handles the inserting of data manually into subscription plan table.
