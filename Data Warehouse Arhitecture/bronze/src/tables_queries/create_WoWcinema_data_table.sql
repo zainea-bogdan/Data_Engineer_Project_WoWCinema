@@ -3,7 +3,7 @@ create table if not exists bronze_wowcinema.wowcinema_data (
    username                varchar(100),
    first_name              varchar(100),
    last_name               varchar(100),
-   subscription_status     int,
+   birth_date              timestamp,
    subscription_plan       int,
    subscription_start_date timestamp,
    iban                    varchar(45),
@@ -13,5 +13,5 @@ create table if not exists bronze_wowcinema.wowcinema_data (
    session_duration_min    float,
    rating_given            float,
    reaction_type           int,
-   country_code            varchar(3)
+   region_code             int
 )
