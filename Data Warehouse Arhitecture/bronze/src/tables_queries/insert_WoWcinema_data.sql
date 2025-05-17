@@ -4,7 +4,7 @@
         username                ,
         first_name              ,
         last_name             ,
-        subscription_status    ,
+        birth_date,
         subscription_plan       ,
         subscription_start_date ,
         iban                    ,
@@ -14,7 +14,7 @@
         session_duration_min    ,
         rating_given            ,
         reaction_type           ,
-        country_code            
+        region_code            
         )
         values(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)
         ;

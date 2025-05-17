@@ -26,7 +26,7 @@ Note: In accordance with the IMDb Non-Commercial Data License, redistribution of
   - Purpose: this schema serves to store the final, fully processed data that is ready for further analytics and reporting.
   - For creating this schema run the following query on your local server: `./bronze/src/schemas/gold_wowcinema.sql`
 
-## Bronze Layer
+## **Bronze Layer**
 
 ### Tables
 
@@ -49,7 +49,6 @@ Note: In accordance with the IMDb Non-Commercial Data License, redistribution of
 | `first_name`              | `VARCHAR(100)` | User’s first name                                                                      |
 | `last_name`               | `VARCHAR(100)` | User’s last name                                                                       |
 | `birth_date`              | `TIMESTAMP`    | User’s birth date                                                                      |
-| `subscription_status`     | `INT`          | Subscription status (Active/Inactive - 1/0)                                            |
 | `subscription_plan`       | `INT`          | Plan type: 1-Basic/2-Standard/3-Premium                                                |
 | `subscription_start_date` | `DATE`         | Start date of the user’s subscription                                                  |
 | `iban`                    | `VARCHAR(45)`  | Simulated bank account number                                                          |
@@ -59,7 +58,7 @@ Note: In accordance with the IMDb Non-Commercial Data License, redistribution of
 | `session_duration_min`    | `FLOAT`        | Total session duration in minutes                                                      |
 | `rating_given`            | `FLOAT`        | User rating for the title (scale 0–10)                                                 |
 | `reaction_type`           | `INT`          | Reaction (1 = like, 0 = neutral, -1 = dislike)                                         |
-| `region_code`             | `VARCHAR(70)`  | Romania Region (called "judet" in Romanian) code from where the user watched the title |
+| `region_code`             | `INT`          | Romania Region (called "judet" in Romanian) code from where the user watched the title |
 
 #### **Netflix Movies and TV Shows (Kaggle) source**
 
@@ -101,9 +100,7 @@ Note: In accordance with the IMDb Non-Commercial Data License, redistribution of
 
 ### Insert Data
 
----
-
-## Silver Layer
+## **Silver Layer**
 
 ## Table structure:
 

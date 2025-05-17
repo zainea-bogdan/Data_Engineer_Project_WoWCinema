@@ -5,9 +5,6 @@ import pandas as pd
 #the module below is used to create a connection with out local database
 import psycopg2
 
-
-
-
 #basically this statement from below i use it to extract from the whole library faker, just the class Faker
 from faker import Faker
 
@@ -33,17 +30,20 @@ def generate_synthethic_data()->list:
     data.append(first_name)
     last_name =synthethic.last_name()
     data.append(last_name)
-    subscription_status = random.randint(0,1)
-    data.append(subscription_status)
+    birth_date= synthethic.date_time()
+    data.append(birth_date)
     subscription_plan =random.randint(1,3)
     data.append(subscription_plan)
-    subscription_start_date = synthethic.date()
+    subscription_start_date = synthethic.date_time()
+    while subscription_start_date < birth_date and subscription_start_date.year < 2010:
+        subscription_start_date = synthethic.date_time()
+
     data.append(subscription_start_date)
     iban = synthethic.iban()
     data.append(iban)
 
     #reading the titles from netflix dataset to get some movies the 
-    get_titles = pd.read_csv("bronze/data/netflix_titles.csv",sep=',',usecols=["title"])
+    get_titles = pd.read_csv("Data Warehouse Arhitecture/bronze/data/netflix_titles.csv",sep=',',usecols=["title"])
 
     make_title_unique=get_titles["title"].unique()
 
@@ -56,8 +56,8 @@ def generate_synthethic_data()->list:
 
     watch_start_time = synthethic.date_time()
     #making sure that we don t have users that watched before the platform was even made:))
-    while(watch_start_time.year<2000):
-         watch_start_time = synthethic.date_time()
+    while(watch_start_time < subscription_start_date):
+        watch_start_time = synthethic.date_time()
 
     data.append(watch_start_time)
 
@@ -68,7 +68,7 @@ def generate_synthethic_data()->list:
     # (like the time scrolling between movies/serials = (watch_start_time - watch_end_time)-movie_length) - if positive of course
     # if the difference this ((watch_start_time - watch_end_time)-movie_length) is <0  that means that the movie wasn't seen completed-and the log was closed
     #ex: i decided to add watchtime between 1minute up to 360, decided random per log
-    adding_time = timedelta(minutes=random.randint(1,360)) 
+    adding_time = timedelta(minutes=random.randint(1,720)) 
     watch_end_time = watch_start_time + adding_time
 
     data.append(watch_end_time)
@@ -83,8 +83,8 @@ def generate_synthethic_data()->list:
     reaction_type = random.randint(-1,1)
     data.append(reaction_type)
     
-    country = synthethic.country_code()
-    data.append(country)
+    region_code = random.randint(1,41)
+    data.append(region_code)
     
 
     return data
@@ -111,7 +111,7 @@ def load_data(data:list):
         username                ,
         first_name              ,
         last_name             ,
-        subscription_status    ,
+        birth_date,
         subscription_plan       ,
         subscription_start_date ,
         iban                    ,
@@ -121,7 +121,7 @@ def load_data(data:list):
         session_duration_min    ,
         rating_given            ,
         reaction_type           ,
-        country_code            
+        region_code            
         )
         values(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)
         ;
@@ -137,10 +137,12 @@ def load_data(data:list):
     )
     conn.commit()
 
+    conn.close()
+
 
 
 
 if __name__ == "__main__":
-    for _ in range(100):
+    for _ in range(200):
         mock_data=generate_synthethic_data()
         load_data(mock_data)

@@ -31,7 +31,7 @@ As part of the **Data Engineering team**, my role is essential in the developmen
 - **Efficiently processed** through a robust ETL pipeline
 - **Governed and compliant** with applicable data privacy regulations such as GDPR
 
-# Business Context
+## Business Context
 
 WoWCinema operates in a dynamic and competitive digital entertainment landscape. The company’s success depends on its ability to:
 
