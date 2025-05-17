@@ -44,7 +44,7 @@ WoWCinema operates in a dynamic and competitive digital entertainment landscape.
 
 ---
 
-- [Extract](./bronze/src/extract/)
+- Extract
 
   - Scope: This process is performed at the bronze tier level (on raw data), where data is ingested and loaded into raw staging tables without transformations.
 
