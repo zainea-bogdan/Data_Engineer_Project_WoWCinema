@@ -1,79 +1,44 @@
-# Data_Engineer_Project_WoWCinema
+# WoWCinema Data Project
+
+Welcome to my first end-to-end data project — **WoWCinema Repository**. This project is inspired by the [InternIT Repository](https://github.com/romanmurzac/InternIT/tree/main), and serves as a comprehensive record of my learning journey across multiple areas of the data field. It combines both theoretical concepts and practical implementations, with the primary objective of simulating a real-world business environment by designing and implementing a complete data solution — from ingestion and transformation to analytics and visualization — using industry-relevant tools and best practices.
+
+## Purpose:
+
+As mentioned earlier, this repository is intended to document my journey of learning and applying Big Data concepts. It is structured in a logical manner that reflects my personal approach to learning — emphasizing how I apply theoretical knowledge to practical, project-based scenarios.
+
+Through this project, my objectives are to:
+
+- Build a solid understanding of core Big Data concepts and modern data workflows
+- Simulate a real business context to define meaningful requirements and goals
+- Improve my ability to structure work, track progress, and document the development process
+- Gain practical experience with widely used tools and technologies across the data stack
+- Explore different areas of the data profession to better understand where my strengths and interests align
+
+Ultimately, this project aims to help me develop both breadth and depth across the Data field, prepari++ng me for possible future roles — primarily in data engineering, but also exploring database administration, analytics, and other related data disciplines.
 
 ## Fictive Scenario
 
-You are a Data Engineer in the WoWCinema company. The WoWCinema company is a Romanian StartUp in movie streaming industry and offers details about a large variety of films for their customers, and also provide the films as well.
+I am a **Data Engineer at WoWCinema**, a relatively new, young, but ambitious Romanian startup in the online **movie streaming industry**. WoWCinema’s vision is to make international film content easily accessible to Romanian audiences, with plans to expand across Eastern Europe.
 
-### Core Business Goals
+The platform offers a wide range of the latest global releases, flexible subscription plans tailored for different budgets, and AI-driven movie recommendations based on user behavior and preferences. It also provides engagement statistics, personalized dashboards, and a focus on showcasing Romanian cinema alongside international titles.
 
----
+To succeed in a competitive market, WoWCinema relies on data to guide user engagement, retention, and content acquisition strategies.
 
-1. **Movie Completion Analytics** – Track how often users complete movies and what influences completion rate.
-2. **Churn Prediction & Retention** – Identify inactive or disengaged users and drive proactive retention.
-3. **Genre Popularity by Region** – Analyze movie genre trends across different countries.
-4. **Subscription Plan Optimization** – Evaluate which subscription tiers perform best based on user activity and duration.
+As part of the **Data Engineering team**, my role is essential in the development and maintenance of the data infrastructure, which is the backbone of WoWCinema's reporting, analytics, and other internal systems. I work in partnership with data analysts, software engineers, and compliance officers to ensure that data is:
 
-#### Reports
+- **Precisely collected** from the right sources (e.g., external databases, internal systems)
+- **Securely stored** in a well-structured and scalable data warehouse
+- **Efficiently processed** through a robust ETL pipeline
+- **Governed and compliant** with applicable data privacy regulations such as GDPR
 
----
+# Business Context
 
-- **Completion rate per movie**
-- **Top 10 genres by total watch time**
-- **User churn risk list** (inactive or low engagement users)
-- **Average session duration by subscription plan**
+WoWCinema operates in a dynamic and competitive digital entertainment landscape. The company’s success depends on its ability to:
 
-#### Dashboards
-
----
-
-- **Top 10 completed movies** (monthly)
-- **Most trending genres by country** (heatmap)
-- **New subscribers vs churned users** (monthly growth)
-- **Estimated monthly revenue by subscription plan**
-
-#### KPIs
-
----
-
-- **Average movie completion rate**
-  - Formula: total completed sessions ÷ total sessions
-- **Monthly active users**
-  - Unique users engaging per month
-- **Churn rate**
-  - Formula: users inactive >30 days ÷ total active users
-- **Genre watch share**
-  - Formula: genre watch time ÷ total watch time
-- **Top subscription plan by revenue**
-  - Plan revenue = plan price × number of users
-
-## Data Warehouse Design
-
-It has a server `WoWCinema` and a database named `WoWCinema`.
-
-### Sources
-
----
-
-The data sources for the company are:
-
-- **WoWCinema Platform** – Own platform data, which includes user activity, interactions (likes/dislikes), and subscription information.
-- [**Netflix Movies and TV Shows (Kaggle)**](https://www.kaggle.com/datasets/shivamb/netflix-shows) – Public dataset providing catalog metadata such as title, cast, type, release year, and description.
-- [**IMDb Non-Commercial Datasets**](https://developer.imdb.com/non-commercial-datasets/) – Official IMDb non-comercial datasets available, under the IMDb Non-Commercial Data Licens, for personal and academic use; offering structured data on titles, ratings, crew, cast, and more, which will be used only for personal testing.
-
-PS: For each source listed above, i have created a specific table in the bronze stage folder, more details in [bronze stage README.md](./bronze/README.md)
-
-Note: In accordance with the IMDb Non-Commercial Data License, redistribution of IMDb datasets is not permitted. Therefore, to use the scripts related to IMDb data in the Bronze tier of this project, please create a local folder named IMDb within your project directory and manually place the title.basics.tsv and title.ratings.tsv files there. These files must be downloaded directly from IMDb's official non-commercial dataset page. Thank you for your understanding!
-
-### Schemas
-
----
-
-- **bronze_wowschema**
-  - Purpose: This schema represents the initial storage for raw, unprocessed data, which is directly extracted from all 3 sources mentioned above.
-- **silver_wowcinema**
-  - Purpose: This schema serves to store cleaned and transformed data, ready for further processing down the pipeline.
-- **gold_wowschema**
-  - Purpose: this schema serves to store the final, fully processed data that is ready for further analytics and reporting.
+- Monitor and analyze viewer behavior and engagement in near real-time
+- Identify at-risk users and reduce churn through personalized retention strategies
+- Generate accurate content performance, licensing and usage reports
+- Deliver intelligent movie recommendations powered by AI, tailored to individual user preferences
 
 ### ETL pipeline
 
