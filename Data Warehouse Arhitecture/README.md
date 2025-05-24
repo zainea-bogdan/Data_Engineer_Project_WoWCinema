@@ -2,7 +2,7 @@
 
 It has a server `WoWCinema` and a database named `WoWCinema`; and for movies details it was decided to use 2 external data sources, a excel dataset from Kaggle and some tsv datasets from IMDb non-com databases.
 
-## Data Sources:
+## **Data Sources:**
 
 - **WoWCinema Platform** – Own platform data, which includes user activity, interactions (likes/dislikes), subscription information and more.
 - [**Netflix Movies and TV Shows (Kaggle)**](https://www.kaggle.com/datasets/shivamb/netflix-shows) – Public dataset providing catalog metadata such as title, cast, type, release year, and description.
@@ -10,27 +10,27 @@ It has a server `WoWCinema` and a database named `WoWCinema`; and for movies det
 
 Note: In accordance with the IMDb Non-Commercial Data License, redistribution of IMDb datasets is not permitted. Therefore, to use the scripts related to IMDb data in the Bronze tier of this project, please create a local folder named IMDb within your project directory and manually place the title.basics.tsv and title.ratings.tsv files there. These files must be downloaded directly from IMDb's official non-commercial dataset page. Thank you for your understanding!
 
-## Schemas
+## **Schemas**
 
-- **bronze_wowcinema**
+- `bronze_wowcinema`
 
   - Purpose: This schema represents the initial storage for raw, unprocessed data, which is directly extracted from all 3 sources mentioned above.
   - For creating this schema run the following query on your local server: `./bronze/src/schemas/bronze_wowcinema.sql`
 
-- **silver_wowcinema**
+- `silver_wowcinema`
 
   - Purpose: This schema serves to store cleaned and transformed data, ready for further processing down the pipeline.
   - For creating this schema run the following query on your local server: `./bronze/src/schemas/silver_wowcinema.sql`
 
-- **gold_wowschema**
+- `gold_wowcinema`
   - Purpose: this schema serves to store the final, fully processed data that is ready for further analytics and reporting.
   - For creating this schema run the following query on your local server: `./bronze/src/schemas/gold_wowcinema.sql`
 
 ## **Bronze Layer**
 
-### Tables
+### **WoWCinema source**
 
-#### **WoWCinema source**
+---
 
 `WoWcinema_data`
 
@@ -60,7 +60,11 @@ Note: In accordance with the IMDb Non-Commercial Data License, redistribution of
 | `reaction_type`           | `INT`          | Reaction (1 = like, 0 = neutral, -1 = dislike)                                         |
 | `region_code`             | `INT`          | Romania Region (called "judet" in Romanian) code from where the user watched the title |
 
-#### **Netflix Movies and TV Shows (Kaggle) source**
+---
+
+### **Netflix Movies and TV Shows (Kaggle) source**
+
+---
 
 `netflix_kaggle_data`
 
@@ -75,7 +79,11 @@ Note: In accordance with the IMDb Non-Commercial Data License, redistribution of
 | `netf_genre`             | `VARCHAR(255)` | Title genre list (minim 1)                 |
 | `netf_movie_description` | `text`         | Title description                          |
 
-#### **IMDb Non-Commercial Datasets source**
+---
+
+### **IMDb Non-Commercial Datasets source**
+
+---
 
 `IMDb_noncom_basiscs`
 
@@ -96,86 +104,80 @@ Note: In accordance with the IMDb Non-Commercial Data License, redistribution of
 | `imd_averageRating` | `FLOAT`       | Average user rating on IMDb 0-10    | title.ratings.tsv.gz |
 | `imd_numVotes`      | `INT`         | Total number of user votes received | title.ratings.tsv.gz |
 
-### Create Tables
-
-### Insert Data
+---
 
 ## **Silver Layer**
 
-## Table structure:
+### `fact_logs`
 
-### `fact_log`
+This is the main table where each row represents a session where a user watched a title.
 
-This is the main table where each row represents a session where a user watched a title. It holds info like session duration, rating, and reactions.
-
-| Column Name      | Data Type   | Description                                                | Bronze Source                                        |
-| ---------------- | ----------- | ---------------------------------------------------------- | ---------------------------------------------------- |
-| log_id           | VARCHAR(50) | Unique ID for each viewing session                         | bronze/wowcinema_data/log_id                         |
-| user_id          | INT         | References the user who watched                            | dim_user/id_user ->generated                         |
-| title_id         | INT         | References the title (movie or show) watched               | silver/dim_title/id_title                            |
-| subscription_id  | INT         | References the user's subscription plan                    | bronze/wowcinema_data/susbscription_plan             |
-| watch_date       | DATE        | The date when the session started                          | bronze/wowcinema/watch_start_time->converted to date |
-| session_duration | FLOAT       | How long the session lasted (in minutes)                   | bronze/wowcinema_data/session_duration_min           |
-| rating_given     | FLOAT       | Rating given by the user for that title (0–10 scale)       | bronze/wowcinema_data/reaction/type                  |
-| reaction_id      | INT         | What the user thought: 1 = like, 0 = neutral, -1 = dislike | bronze/wowcinema_data/reaction-type                  |
+| Column Name            | Data Type          | Description                                                | Bronze Source                                                                                  |
+| ---------------------- | ------------------ | ---------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| `log_id`               | `VARCHAR(50)` `PK` | Unique ID for each viewing session                         | `bronze/wowcinema_data/log_id`                                                                 |
+| `user_id`              | `INT` `FK`         | References the user who watched                            | `dim_users/user_id` — generated and matched based on `username`, `first_name`, and `last_name` |
+| `subscription_plan_id` | `INT` `FK`         | References the user's subscription plan                    | `bronze/wowcinema_data/subscription_plan`                                                      |
+| `title_id`             | `INT` `FK`         | References the title (movie or show) watched               | `dim_titles/title_id` — generated                                                              |
+| `start_time`           | `DATE`             | The date when the session started                          | `bronze/wowcinema_data/watch_start_time` → converted to date                                   |
+| `end_time`             | `DATE`             | The date when the session ended                            | `bronze/wowcinema_data/watch_end_time` → converted to date                                     |
+| `session_duration`     | `FLOAT`            | How long the session lasted (in minutes)                   | `bronze/wowcinema_data/session_duration_min`                                                   |
+| `reaction_id`          | `INT` `FK`         | What the user thought: 1 = like, 0 = neutral, -1 = dislike | `bronze/wowcinema_data/reaction_type` — mapped via `dim_reactions` for flexibility             |
+| `rating_given`         | `FLOAT`            | Rating given by the user for that title (0–10 scale)       | `bronze/wowcinema_data/rating_given`                                                           |
 
 ---
 
-### `subscription_plan`
-
-| Column Name            | Data Type     | Description                                                   |
-| ---------------------- | ------------- | ------------------------------------------------------------- |
-| `subscription_plan_id` | `INT`         | Unique identifier for each subscription plan. (1,2,3)         |
-| `subscription_plan`    | `VARCHAR(15)` | Name of the subscription plan (Basic,Standard,Premium)        |
-| `subscription_price`   | `FLOAT`       | Monthly cost for each subscription plan.                      |
-| `currency_code`        | `VARCHAR(3)`  | Currency code representing the price currency (ex: EUR, USD). |
-
-### `dim_user`
+### `dim_users`
 
 This table contains details about each user who has activity on the platform.
 
-| Column Name     | Data Type    | Description                           | Bronze Source                            |
-| --------------- | ------------ | ------------------------------------- | ---------------------------------------- |
-| user_id         | INT          | Unique ID for each user               | generated                                |
-| username        | VARCHAR(100) | The user’s platform username          | bronze/wowcinema_data/username           |
-| first_name      | VARCHAR(100) | User’s first name                     | bronze/wowcinema_data/first_name         |
-| last_name       | VARCHAR(100) | User’s last name                      | bronze/wowcinema_data/last_name          |
-| country_code    | VARCHAR(70)  | Country where the user is located     | bronze/wowcinema_data/country_code       |
-| subscription_id | INT          | ID of the subscription the user is on | bronze/wowcinema_data/ subscription_plan |
+| Column Name               | Data Type      | Description                      | Bronze Source                                   |
+| ------------------------- | -------------- | -------------------------------- | ----------------------------------------------- |
+| `user_id`                 | `INT` `PK`     | Unique ID for each user          | generated                                       |
+| `username`                | `VARCHAR(100)` | The user’s platform username     | `bronze/wowcinema_data/username`                |
+| `first_name`              | `VARCHAR(100)` | User’s first name                | `bronze/wowcinema_data/first_name`              |
+| `last_name`               | `VARCHAR(100)` | User’s last name                 | `bronze/wowcinema_data/last_name`               |
+| `birth_date`              | `DATE`         | User’s birth date                | `bronze/wowcinema_data/birth_date`              |
+| `user_iban`               | `VARCHAR(45)`  | Simulated bank account number    | `bronze/wowcinema_data/iban`                    |
+| `region_code`             | `INT`          | Region where the user is located | `bronze/wowcinema_data/region_code`             |
+| `subscription_start_date` | `TIMESTAMP`    | Subscription start date          | `bronze/wowcinema_data/subscription_start_date` |
 
 ---
 
-### `dim_title`
+### `dim_titles`
 
 This table stores information about each title (movie or show) available on the platform.
 
-| Column Name     | Data Type    | Description                               | Bronze Source                                |
-| --------------- | ------------ | ----------------------------------------- | -------------------------------------------- |
-| title_id        | INT          | Unique ID for the title                   | generated                                    |
-| title_name      | VARCHAR(255) | The title’s name                          | bronze/netflix_kaggle_data/netf_title        |
-| release_year    | INT          | Year when the title was released          | bronze/netflix_kaggle_data/netf_release_year |
-| title_type      | VARCHAR(50)  | Type of content (movie, TV series, etc.)  | to be completed                              |
-| runtime_minutes | FLOAT        | Duration of the title in minutes          | bronze/netflix_kaggle_data/netf_duration     |
-| title_genres    | VARCHAR(255) | List of genres (as a raw string, for now) | to be completed                              |
+| Column Name          | Data Type      | Description                                                 | Bronze Source                                                                          |
+| -------------------- | -------------- | ----------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| `title_id`           | `INT` `PK`     | Unique ID for the title                                     | generated                                                                              |
+| `title_name`         | `VARCHAR(255)` | The title’s name                                            | `bronze/netflix_kaggle_data/netf_title`                                                |
+| `title_type`         | `VARCHAR(50)`  | Type of content (movie, TV series, etc.)                    | to be completed                                                                        |
+| `title_director`     | `VARCHAR(255)` | Director of the title                                       | `bronze/netflix_kaggle_data/netf_director`                                             |
+| `title_release_year` | `INT`          | Year when the title was released                            | `bronze/netflix_kaggle_data/netf_release_year`                                         |
+| `title_duration`     | `FLOAT`        | Duration of the title in minutes or calculated from seasons | `bronze/netflix_kaggle_data/netf_duration` or `IMDb_noncom_basiscs/imd_runtimeMinutes` |
+| `title_genres`       | `VARCHAR(255)` | List of genres (as a raw string, for now)                   | to be completed                                                                        |
+| `title_description`  | `TEXT`         | Title description                                           | to be completed                                                                        |
 
 ---
 
-### `dim_subscription`
+### `dim_subscriptions`
 
 This table describes the different types of subscription plans available to users.
 
-| Column Name        | Data Type   | Description                                 | Bronze Source                                 |
-| ------------------ | ----------- | ------------------------------------------- | --------------------------------------------- |
-| subscription_id    | INT         | Unique ID for the subscription plan         | bronze/subscription_plan/subscription_plan_id |
-| subscription_plan  | VARCHAR(15) | Name of the plan (Basic, Standard, Premium) | bronze/subscription_plan/subscription_plan    |
-| subscription_price | FLOAT       | Monthly price of the subscription           | bronze/subscription_plan/subscription_price   |
-| currency_code      | VARCHAR(3)  | Currency used for pricing (e.g., USD, EUR)  | bronze/subscription_plan/currency_code        |
+| Column Name          | Data Type     | Description                                 |
+| -------------------- | ------------- | ------------------------------------------- |
+| `subscription_id`    | `INT` `PK`    | Unique ID for the subscription plan         |
+| `subscription_plan`  | `VARCHAR(15)` | Name of the plan (Basic, Standard, Premium) |
+| `subscription_price` | `FLOAT`       | Monthly price of the subscription           |
+| `currency_code`      | `VARCHAR(3)`  | Currency used for pricing (e.g., USD, EUR)  |
 
-### `dim_reaction`
+---
+
+### `dim_reactions`
 
 This table contains the possible types of user reactions available on the platform.
 
-| Column Name   | Data Type   | Description                                 | Bronze Source                        |
-| ------------- | ----------- | ------------------------------------------- | ------------------------------------ |
-| reaction_id   | INT         | Unique ID representing the type of reaction | bronze/wowcinema_data/reaction_type  |
-| reaction_name | VARCHAR(20) | Text label for the reaction type            | explained at reaction_id in fact log |
+| Column Name            | Data Type  | Description                                 | Bronze Source                         |
+| ---------------------- | ---------- | ------------------------------------------- | ------------------------------------- |
+| `reaction_id`          | `INT` `PK` | Unique ID representing the type of reaction | `bronze/wowcinema_data/reaction_type` |
+| `reaction_description` | `TEXT`     | Text description for the reaction type      | explained based on `reaction_id`      |
