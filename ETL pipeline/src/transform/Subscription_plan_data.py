@@ -18,7 +18,7 @@ def load_data():
     cursor = conn.cursor()
 
     sql_1 = """
-    insert into bronze_wowcinema.subscription_plan (
+    insert into silver_wowcinema.subscription_plan (
     subscription_plan_id ,
     subscription_plan    ,
     subscription_price   ,
@@ -31,7 +31,7 @@ def load_data():
     conn.commit()
     
     sql_2 = """
-    insert into bronze_wowcinema.subscription_plan (
+    insert into silver_wowcinema.subscription_plan (
     subscription_plan_id ,
     subscription_plan    ,
     subscription_price   ,
@@ -45,7 +45,7 @@ def load_data():
     conn.commit()
 
     sql_3 = """
-    insert into bronze_wowcinema.subscription_plan (
+    insert into silver_wowcinema.subscription_plan (
     subscription_plan_id ,
     subscription_plan    ,
     subscription_price   ,
