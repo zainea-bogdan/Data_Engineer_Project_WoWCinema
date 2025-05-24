@@ -1,8 +1,8 @@
-# WoWCinema Data Project
+# **WoWCinema Data Project**
 
 Welcome to my first end-to-end data project — **WoWCinema Repository**. This project is inspired by the [InternIT Repository](https://github.com/romanmurzac/InternIT/tree/main), and serves as a comprehensive record of my learning journey across multiple areas of the data field. It combines both theoretical concepts and practical implementations, with the primary objective of simulating a real-world business environment by designing and implementing a complete data solution — from ingestion and transformation to analytics and visualization — using industry-relevant tools and best practices.
 
-## Purpose:
+## **Purpose:**
 
 As mentioned earlier, this repository is intended to document my journey of learning and applying Big Data concepts. It is structured in a logical manner that reflects my personal approach to learning — emphasizing how I apply theoretical knowledge to practical, project-based scenarios.
 
@@ -16,7 +16,7 @@ Through this project, my objectives are to:
 
 Ultimately, this project aims to help me develop both breadth and depth across the Data field, prepari++ng me for possible future roles — primarily in data engineering, but also exploring database administration, analytics, and other related data disciplines.
 
-## Fictive Scenario
+## **Fictive Scenario**
 
 I am a **Data Engineer at WoWCinema**, a relatively new, young, but ambitious Romanian startup in the online **movie streaming industry**. WoWCinema’s vision is to make international film content easily accessible to Romanian audiences, with plans to expand across Eastern Europe.
 
@@ -31,7 +31,7 @@ As part of the **Data Engineering team**, my role is essential in the developmen
 - **Efficiently processed** through a robust ETL pipeline
 - **Governed and compliant** with applicable data privacy regulations such as GDPR
 
-## Business Context
+## **Business Context**
 
 WoWCinema operates in a dynamic and competitive digital entertainment landscape. The company’s success depends on its ability to:
 
@@ -39,3 +39,10 @@ WoWCinema operates in a dynamic and competitive digital entertainment landscape.
 - Identify at-risk users and reduce churn through personalized retention strategies
 - Generate accurate content performance, licensing and usage reports
 - Deliver intelligent movie recommendations powered by AI, tailored to individual user preferences
+
+For more details regarding the business requirements, checkout the [Business Requirements README](Business_Requirements/README.md) where are presented:
+
+- [Core Business Goals](Business_Requirements/README.md#core-business-goals)
+- [Reports Description](Business_Requirements/README.md#reports)
+- [Dashboards Description](Business_Requirements/README.md#dashboards)
+- [KPIs Description](Business_Requirements/README.md#kpis)

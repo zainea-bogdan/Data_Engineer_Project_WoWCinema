@@ -64,10 +64,6 @@
 - **Subscription Plan Performance Dashboard**  
   Tracks user distribution across subscription tiers and compares engagement metrics (e.g., average watch time, churn) per plan.
 
-#### KPIs
-
----
-
 ## KPIs
 
 - **Average Movie Completion Rate**  
