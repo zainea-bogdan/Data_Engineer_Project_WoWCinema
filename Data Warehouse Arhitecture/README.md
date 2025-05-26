@@ -68,16 +68,16 @@ Note: In accordance with the IMDb Non-Commercial Data License, redistribution of
 
 `netflix_kaggle_data`
 
-| Column Name              | Data Type      | Description                                |
-| ------------------------ | -------------- | ------------------------------------------ |
-| `netf_title`             | `VARCHAR(255)` | title name(title=movie/serial)             |
-| `netf_title_type`        | `VARCHAR(10)`  | title category(movie/tv show)              |
-| `netf_director`          | `VARCHAR(255)` | Movie Director                             |
-| `netf_data_added`        | `VARCHAR(50)`  | Date when movie was uploaded on netflix    |
-| `netf_release_year`      | `INT`          | Title release year                         |
-| `netf_duration`          | `VARCHAR(15)`  | Unit of measure(movie-min,serials-seasons) |
-| `netf_genre`             | `VARCHAR(255)` | Title genre list (minim 1)                 |
-| `netf_movie_description` | `text`         | Title description                          |
+| Column Name              | Data Type      | Description                                         |
+| ------------------------ | -------------- | --------------------------------------------------- |
+| `netf_title`             | `VARCHAR(255)` | title name(title=movie/serial)                      |
+| `netf_title_type`        | `VARCHAR(10)`  | title category(movie/tv show)                       |
+| `netf_director`          | `VARCHAR(255)` | Movie Director, it can be completed using idmb data |
+| `netf_data_added`        | `VARCHAR(50)`  | Date when movie was uploaded on netflix             |
+| `netf_release_year`      | `INT`          | Title release year                                  |
+| `netf_duration`          | `VARCHAR(15)`  | Unit of measure(movie-min,serials-seasons)          |
+| `netf_genre`             | `VARCHAR(255)` | Title genre list (minim 1)                          |
+| `netf_movie_description` | `text`         | Title description                                   |
 
 ---
 
@@ -151,12 +151,12 @@ This table stores information about each title (movie or show) available on the 
 | -------------------- | -------------- | ----------------------------------------------------------- | -------------------------------------------------------------------------------------- |
 | `title_id`           | `INT` `PK`     | Unique ID for the title                                     | generated                                                                              |
 | `title_name`         | `VARCHAR(255)` | The title’s name                                            | `bronze/netflix_kaggle_data/netf_title`                                                |
-| `title_type`         | `VARCHAR(50)`  | Type of content (movie, TV series, etc.)                    | to be completed                                                                        |
+| `title_type`         | `VARCHAR(50)`  | Type of content (movie, TV series, etc.)                    | `bronze/netflix_kaggle_data/netf_title_type`                                           |
 | `title_director`     | `VARCHAR(255)` | Director of the title                                       | `bronze/netflix_kaggle_data/netf_director`                                             |
 | `title_release_year` | `INT`          | Year when the title was released                            | `bronze/netflix_kaggle_data/netf_release_year`                                         |
 | `title_duration`     | `FLOAT`        | Duration of the title in minutes or calculated from seasons | `bronze/netflix_kaggle_data/netf_duration` or `IMDb_noncom_basiscs/imd_runtimeMinutes` |
-| `title_genres`       | `VARCHAR(255)` | List of genres (as a raw string, for now)                   | to be completed                                                                        |
-| `title_description`  | `TEXT`         | Title description                                           | to be completed                                                                        |
+| `title_genres`       | `VARCHAR(255)` | List of genres (as a raw string, for now)                   | from the netflix set                                                                   |
+| `title_description`  | `TEXT`         | Title description                                           | to from netflix set                                                                    |
 
 ---
 
