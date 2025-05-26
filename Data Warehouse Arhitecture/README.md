@@ -155,7 +155,7 @@ This table stores information about each title (movie or show) available on the 
 | `title_director`     | `VARCHAR(255)` | Director of the title                                       | `bronze/netflix_kaggle_data/netf_director`                                             |
 | `title_release_year` | `INT`          | Year when the title was released                            | `bronze/netflix_kaggle_data/netf_release_year`                                         |
 | `title_duration`     | `FLOAT`        | Duration of the title in minutes or calculated from seasons | `bronze/netflix_kaggle_data/netf_duration` or `IMDb_noncom_basiscs/imd_runtimeMinutes` |
-| `title_genres`       | `VARCHAR(255)` | List of genres (as a raw string, for now)                   | from the netflix set                                                                   |
+| `title_genres`       | `TEXT`         | List of genres (as a raw string, for now)                   | from the netflix set                                                                   |
 | `title_description`  | `TEXT`         | Title description                                           | to from netflix set                                                                    |
 
 ---

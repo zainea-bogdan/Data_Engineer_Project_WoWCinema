@@ -33,6 +33,9 @@ if __name__ =="__main__":
         # "./Data Warehouse Arhitecture/silver/src/tables/insert_dim_user_table.sql"
         # "./Data Warehouse Arhitecture/silver/src/tables/create_dim_reactions.sql",
         # "./Data Warehouse Arhitecture/silver/src/tables/insert_dim_reactions.sql"
+        # "./Data Warehouse Arhitecture/silver/src/sequences/table_id_sequence.sql",
+        # "./Data Warehouse Arhitecture/silver/src/tables/create_dim_titles.sql",
+        # "./Data Warehouse Arhitecture/silver/src/tables/insert_dim_titles.sql"
         ]
     for query_path in query_paths:
         sql_query = read_sql(query_path)
