@@ -2,81 +2,129 @@
 
 ## Core Business Goals
 
-1. **Viewer Engagement & Completion Analysis** - Understand how users interact with content, for example: who starts movies, who finishes, how long are user using the platform and so on.
+1. **Viewer Engagement and Completion Analysis**
 
-2. **Churn Detection & Retention Strategy** - Identify disengaged users, predict churn risk, and support proactive retention actions (ex: personalized re-engagement emails or personalized subscription offers).
+   - Analyze how users interact with content — including who starts movies, who finishes them, how long users stay engaged on the platform, and overall usage patterns — to better understand audience behavior.
 
-3. **Personalized Movie Recommendation Engine** - Suggest relevant content to users based on preferences, watch history, and platform-wide trends.
+2. **Subscription Plan Performance Evaluation**
 
-4. **Genre Popularity by Region** - Analyze which genres perform best across different regions and user segments to inform content strategy and licensing decisions.
+   - Assess the effectiveness of each subscription tier by measuring user activity, retention rates, and revenue contribution, helping to refine pricing strategies and optimize plan offerings.
 
-5. **Subscription Plan Performance Analysis**
-   Evaluate the effectiveness of pricing tiers based on user activity, retention, and revenue contribution.
+3. **Movie Performance and Recommendation Optimization**
+
+   - Evaluate movie performance based on metrics like views, completion rates, and user ratings to identify top-performing titles. Use these insights to enhance the recommendation engine, delivering more relevant and engaging suggestions to users.
+
+4. **Genre Popularity Insights**
+
+   - Determine which genres are most popular across different user segments to support data-driven content acquisition, curation, and regional targeting strategies.
 
 ## Reports
 
-- **Movie Completion Report**  
-  Shows completion rate per movie (ex: percentage of viewers who finish each title).
-- **Session Duration Trend Report**  
-  Tracks the average watch time per user or session over time.
+- **Movie Completion Report**
+
+  - Displays the completion rate for each movie, showing the percentage of viewers who watched a title from start to finish.
+
+- **Session Duration Report**
+
+  - Tracks the average viewing time per user session to assess overall engagement and time spent on the platform.
+
+- **Active vs. Inactive User Report**
+
+  - Identifies and compares the number of active users, at least once, versus inactive users.
 
 ---
 
-- **Inactive User List**  
-  Lists users who have not engaged with the platform in the last 15/30 days.
+- **User Distribution Across Subscription Plans**
 
-- **Churn Rate by User Segment**  
-  Compares churn rates across user groups (ex: age, region, subscription plan).
+  - Provides a breakdown of users by subscription tier to identify which plans are most commonly chosen.
+
+- **Active vs. Inactive Users by Subscription Plan**
+
+  - Highlights user engagement across tiers by showing the number of active and inactive users within each subscription plan.
+
+- **Revenue Analysis by Subscription Tier**
+
+  - Evaluates how much revenue is generated per user in each plan, helping assess the financial effectiveness of each pricing tier.
+
+- **Content Completion Rate by Subscription Plan**
+
+  - Measures average content completion rates across subscription tiers to determine whether higher-paying users are more engaged.
 
 ---
 
-- **Top Watched Movies by Similar Users**  
-  Highlights popular movies among users with similar viewing behavior.
+- **Top 10 Most Watched Movies**
 
-- **Top 5 Genres per Region**  
-  Identifies the most-watched genres in each region.
+  - Displays the top-performing movies based on user view counts and in-platform ratings, helping identify the most popular content.
 
-- **Genre Completion Comparison**  
-  Shows completion rates per genre across regions.
+- **Bottom 10 Least Watched Movies**
+
+  - Highlights movies with the lowest view counts and ratings, useful for identifying underperforming titles that may need review or promotion.
+
+- **Platform vs. IMDb Rating Comparison**
+
+  - Compares average user ratings on the WoWCinema platform with IMDb ratings to assess alignment with global audience sentiment.
+
+- **Movie Completion Rate Overview**
+
+  - Shows the average percentage of each movie watched by users, offering insight into how engaging or “finishable” the content is.
 
 ---
 
-- **User Distribution by Subscription Plan**  
-  Breaks down the number of users per subscription tier. Tracks shifts in plan adoption and growth trends.
+- **Top 10 Most Watched Genres by Region**
 
-- **Plan-Level Engagement Report**  
-  Analyzes average engagement (watch time, churn) by subscription plan. Helps evaluate value and performance of pricing tiers.
+  - Highlights the top-performing genres based on view counts across different regions, helping identify regional content preferences.
+
+- **Bottom 5 Least Watched Genres by Region**
+
+  - Displays the genres with the lowest engagement in each region, offering insight into underperforming content areas.
+
+- **Genre Completion Rate Comparison**
+
+  - Shows the average completion rate per genre across regions, helping evaluate which genres keep users most engaged through to the end.
+
+- **Average User Rating by Genre**
+
+  - Calculates the average user rating for each genre to assess perceived content quality beyond simple view counts.
+
+- **Top 5 Genres by Subscription Tier**
+
+  - Identifies the most-watched genres within each subscription plan, helping link content preferences to user monetization levels.
 
 ## Dashboards
 
-- **Movie Completion Dashboard**  
-  Visualizes completion rates per movie to assess content performance and viewer engagement.
+- **User Engagement & Activity Overview**
 
-- **Churn Overview Dashboard**  
-  Displays churn rate by user segment (e.g., region, subscription plan) alongside a count of inactive users. Useful for retention strategy planning.
+  - Focused on user behavior and platform engagement, this dashboard summarizes insights from the _movie completion_, _session duration_, and _active vs. inactive user reports_.
 
-- **Recommendation Engagement Dashboard**  
-  Shows top watched movies among similar users and highlights engagement with recommended content. Supports optimization of the recommendation system.
+- **Subscription Plan Performance Overview**
 
-- **Regional Genre Insights Dashboard**  
-  Combines the top 5 genres per region with genre-level completion rates to inform content acquisition and regional marketing efforts.
+  - Focused on analyzing subscription tier performance, this dashboard summarizes insights from _user distribution_, _activity levels_, _revenue generation_, and _content completion across plans_.
 
-- **Subscription Plan Performance Dashboard**  
-  Tracks user distribution across subscription tiers and compares engagement metrics (e.g., average watch time, churn) per plan.
+- **Movie Performance & Recommendation Insights**
+
+  - Focused on evaluating movie performance and viewer preferences, this dashboard summarizes insights from _top and bottom viewed titles_, _user and IMDb rating comparisons_, and _movie completion rates_ to support content strategy and recommendation optimization.
+
+- **Genre Popularity Overview**
+
+  - Focused on understanding content preferences, this dashboard summarizes insights from _genre view counts_, _completion rates_, _user ratings_, and _subscription-based genre trends_ across regions and user segments.
 
 ## KPIs
 
-- **Average Movie Completion Rate**  
-  Formula: Total completed sessions ÷ Total started sessions
+- **User Engagement Score**
 
-- **Monthly Active Users (MAU)**  
-  Unique users engaging in the last 30 days
+  - Measures overall user interaction and activity on the platform.
+  - **Dashboard Source:** _User Engagement & Activity Overview_
 
-- **Churn Rate**  
-  Formula: Users inactive >15/30 days ÷ Total active users
+- **Subscription Tier Effectiveness**
 
-- **Genre Watch Share**  
-  Formula: Watch time per genre ÷ Total watch time
+  - Evaluates the performance of each subscription plan based on user activity, retention, and revenue.
+  - **Dashboard Source:** _Subscription Plan Performance Overview_
 
-- **Average Revenue per User (ARPU)**  
-  Formula: Total revenue ÷ Total active users
+- **Movie Engagement & Quality Index**
+
+  - Assesses movie popularity and quality using view counts, completion rates, and user vs. IMDb ratings.
+  - **Dashboard Source:** _Movie Performance & Recommendation Insights_
+
+- **Genre Popularity Index**
+  - Measures the popularity and engagement of content genres across regions and user segments.
+  - **Dashboard Source:** _Genre Popularity Overview_
