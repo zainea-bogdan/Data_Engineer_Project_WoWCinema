@@ -19,7 +19,7 @@ Ultimately, this project aims to help me develop both breadth and depth across t
 
 I am a **Data Engineer** at **WoWCinema**, a young, ambitious Romanian startup in the online movie streaming industry. WoWCinema's mission is to make international film content easily accessible to Romanian audiences, with a long-term vision of promoting Romanian cinema as well and expanding throughout Eastern Europe.
 
-WoWcinema's platform offers a diverse catalog of the latest global releases, and they are actively working to integrate Romanian titles as part of our identity. Users can choose from three flexible subscription plans, tailored to various budgets. They also provide movie recommendations based on user behavior and preferences, along with personalized dashboards and viewer engagement analytics.
+WoWcinema's platform offers a diverse catalog of the latest global releases, and they are actively working to integrate Romanian titles as part of their identity. Users can choose from three flexible subscription plans, tailored to various budgets. They also provide movie recommendations based on user behavior and preferences, along with personalized dashboards and viewer engagement analytics.
 
 To succeed in a competitive market, WoWCinema relies on data to guide user engagement, retention, and content acquisition strategies.
 
