@@ -14,6 +14,12 @@
 
    - Evaluate movie performance based on metrics like views, completion rates, and user ratings to identify top-performing titles. Use these insights to enhance the recommendation engine, delivering more relevant and engaging suggestions to users.
 
+---
+
+**Bonus**:
+
+---
+
 4. **Genre Popularity Insights**
 
    - Determine which genres are most popular across different user segments to support data-driven content acquisition, curation, and regional targeting strategies.
@@ -70,6 +76,10 @@
 
 ---
 
+**Bonus**:
+
+---
+
 - **Top 10 Most Watched Genres by Region**
 
   - Highlights the top-performing genres based on view counts across different regions, helping identify regional content preferences.
@@ -81,10 +91,6 @@
 - **Genre Completion Rate Comparison**
 
   - Shows the average completion rate per genre across regions, helping evaluate which genres keep users most engaged through to the end.
-
-- **Average User Rating by Genre**
-
-  - Calculates the average user rating for each genre to assess perceived content quality beyond simple view counts.
 
 - **Top 5 Genres by Subscription Tier**
 
@@ -103,6 +109,12 @@
 - **Movie Performance & Recommendation Insights**
 
   - Focused on evaluating movie performance and viewer preferences, this dashboard summarizes insights from _top and bottom viewed titles_, _user and IMDb rating comparisons_, and _movie completion rates_ to support content strategy and recommendation optimization.
+
+---
+
+**Bonus**:
+
+---
 
 - **Genre Popularity Overview**
 
@@ -124,6 +136,12 @@
 
   - Assesses movie popularity and quality using view counts, completion rates, and user vs. IMDb ratings.
   - **Dashboard Source:** _Movie Performance & Recommendation Insights_
+
+---
+
+**Bonus**:
+
+---
 
 - **Genre Popularity Index**
   - Measures the popularity and engagement of content genres across regions and user segments.
