@@ -25,12 +25,12 @@ def execute_structural_query(sql: str) -> None:
 if __name__ =="__main__":  
     query_paths_structure = [
         "./Data_Warehouse_Arhitecture/src/schemas/create_silver_schema.sql",
-        "./Data_Warehouse_Arhitecture/src/silver/creating/create_dim_users.sql",
-        "./Data_Warehouse_Arhitecture/src/silver/inserting/insert_dim_users.sql",
         "./Data_Warehouse_Arhitecture/src/silver/creating/create_dim_titles.sql",
         "./Data_Warehouse_Arhitecture/src/silver/inserting/insert_dim_titles.sql",
         "./Data_Warehouse_Arhitecture/src/silver/creating/create_dim_subscriptions.sql",
         "./Data_Warehouse_Arhitecture/src/silver/inserting/insert_dim_subscriptions.sql",
+        "./Data_Warehouse_Arhitecture/src/silver/creating/create_dim_users.sql",
+        "./Data_Warehouse_Arhitecture/src/silver/inserting/insert_dim_users.sql",
         "./Data_Warehouse_Arhitecture/src/silver/creating/create_dim_regions.sql",
         "./Data_Warehouse_Arhitecture/src/silver/creating/create_dim_reactions.sql",
         "./Data_Warehouse_Arhitecture/src/silver/inserting/insert_dim_reactions.sql",

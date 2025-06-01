@@ -28,11 +28,11 @@
 
 - **Movie Completion Report**
 
-  - Displays the completion rate for each movie, showing the percentage of viewers who watched a title from start to finish.
+  - Displays the average completion ratio for WoWcinema catalog's titles
 
 - **Session Duration Report**
 
-  - Tracks the average viewing time per user session to assess overall engagement and time spent on the platform.
+  - Tracks the average viewing time to assess overall engagement and time spent on the platform.
 
 - **Active vs. Inactive User Report**
 
@@ -52,10 +52,6 @@
 
   - Evaluates how much revenue is generated per user in each plan, helping assess the financial effectiveness of each pricing tier.
 
-- **Content Completion Rate by Subscription Plan**
-
-  - Measures average content completion rates across subscription tiers to determine whether higher-paying users are more engaged.
-
 ---
 
 - **Top 10 Most Watched Movies**
@@ -69,10 +65,6 @@
 - **Platform vs. IMDb Rating Comparison**
 
   - Compares average user ratings on the WoWCinema platform with IMDb ratings to assess alignment with global audience sentiment.
-
-- **Movie Completion Rate Overview**
-
-  - Shows the average percentage of each movie watched by users, offering insight into how engaging or “finishable” the content is.
 
 ---
 

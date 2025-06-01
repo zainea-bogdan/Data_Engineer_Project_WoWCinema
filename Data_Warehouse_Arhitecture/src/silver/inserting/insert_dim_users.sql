@@ -4,6 +4,7 @@ blu.id_user,
 blu.first_name,
 blu.last_name,
 date(blu.birth_date),
+blu.subscription_plan,
 date(blu.subscription_start_date),
 blu.iban
 from bronze_wowcinema.users as blu

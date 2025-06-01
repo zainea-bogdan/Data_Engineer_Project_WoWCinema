@@ -2,7 +2,6 @@ insert into silver_wowcinema.fact_logs
 select distinct 
 bls.id_log,
 bls.id_user,
-bus.subscription_plan,
 bls.titleconst,
 bls.session_start,
 bls.session_end,
