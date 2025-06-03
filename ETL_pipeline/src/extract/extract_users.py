@@ -8,9 +8,7 @@ from faker import Faker
 
 def generate_synthetic_data_users()->list:
     data=[]
-
     synthethic=Faker("ro_RO")
-
     #user id il generez cu o secventa
     first_name = synthethic.first_name()
     data.append(first_name)
@@ -50,8 +48,6 @@ def execute_insert_query(sql: str,data:list) -> None:
     cursor.execute(sql,data)
     conn.commit()
     conn.close()
-
-
 
 if __name__ =="__main__":  
     user_insert_sql="./Data_Warehouse_Arhitecture/src/bronze/inserting/insert_users.sql"

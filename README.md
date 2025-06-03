@@ -31,4 +31,36 @@ As the **Data Engineer** of WoWCinema, I am responsible for designing, building,
 - **Governed and compliant** with applicable data privacy regulations, such as GDPR.
 - **Analytics-ready**, enabling data analysts and business stakeholders to measure company performance and make informed, data-driven decisions.
 
-For more details on core business goals, required reports, desired dashboards, and key performance indicators (KPIs), please refer to the folder named: [Business Requirements](./Business_Requirements/README.md)
+For more details on core business goals, required [reports](./Business_Requirements/README.md#Reports), desired [dashboards](./Business_Requirements/README.md#Dashboards), and key performance indicators ([KPIs](./Business_Requirements/README.md#KPIs)), please refer to the folder named: [Business Requirements](./Business_Requirements/README.md).
+
+## Repository tree:
+
+---
+
+|
+├───Business_Requirements
+├───Dashboards_Power_BI
+├───Data_Warehouse_Arhitecture
+│ └───src
+│ ├───bronze
+│ │ ├───creating
+│ │ ├───inserting
+│ │ ├───selecting
+│ │ └───sequences
+│ ├───gold
+│ │ ├───creating
+│ │ ├───inserting
+│ │ └───selecting
+│ ├───schemas
+│ └───silver
+│ ├───creating
+│ ├───inserting
+│ └───selecting
+├───ETL_pipeline
+│ └───src
+│ ├───extract
+│ ├───load
+│ └───transform
+└───IMDb
+
+---
