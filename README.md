@@ -35,8 +35,7 @@ For more details on core business goals, required [reports](./Business_Requireme
 
 ## Repository tree:
 
----
-
+```
 |
 ├───Business_Requirements
 ├───Dashboards_Power_BI
@@ -62,5 +61,4 @@ For more details on core business goals, required [reports](./Business_Requireme
 │ ├───load
 │ └───transform
 └───IMDb
-
----
+```
