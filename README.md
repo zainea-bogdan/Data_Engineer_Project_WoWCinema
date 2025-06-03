@@ -70,10 +70,14 @@ For more details on core business goals, required [reports](./Business_Requireme
   - A **`src/`** subfolder, which contains the source code relevant to that specific component.
 
 ```
+|
 +---Business_Requirements
 |       README.md
 |
 +---Dashboards_Power_BI
+|       Subscription Plan Performance Overview.pdf
+|       User Engagement & Activity Overview.pdf
+|
 +---Data_Warehouse_Arhitecture
 |   |   BSG_arhitecture.drawio
 |   |   README.md
@@ -143,9 +147,9 @@ For more details on core business goals, required [reports](./Business_Requireme
 |           |
 |           \---selecting
 +---ETL_pipeline
+|   |   README.md
+|   |
 |   \---src
-|       |   README.md
-|       |
 |       +---extract
 |       |       bronze_layer_structure.py
 |       |       extract_director_name.py
