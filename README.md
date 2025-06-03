@@ -2,6 +2,12 @@
 
 Welcome to my first end-to-end data project — **WoWCinema Repository**. This project is inspired by the [InternIT Repository](https://github.com/romanmurzac/InternIT/tree/main), and serves as a comprehensive record of my learning journey across multiple areas of the data field. It combines both theoretical concepts and practical implementations, with the primary objective of simulating a real-world business environment by designing and implementing a complete data solution, from ingestion and transformation to analytics and visualization, using industry-relevant tools and best practices.
 
+## Tech Stack
+
+![Postgres](https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white)
+![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
+![Power Bi](https://img.shields.io/badge/power_bi-F2C811?style=for-the-badge&logo=powerbi&logoColor=black)
+
 ## **Project's Purpose:**
 
 As mentioned earlier, this repository is intended to document my journey of learning and applying Big Data concepts. It is structured in a logical manner that reflects my personal approach to learning, emphasizing how I apply theoretical knowledge to my project-based scenario.
@@ -46,13 +52,10 @@ For more details on core business goals, required [reports](./Business_Requireme
       - [sequences](./Data_Warehouse_Arhitecture/src/bronze/sequences/)
     - [gold](./Data_Warehouse_Arhitecture/src/gold/)
       - [creating](./Data_Warehouse_Arhitecture/src/gold/creating/)
-      - [inserting](./Data_Warehouse_Arhitecture/src/gold/inserting/)
-      - [selecting](./Data_Warehouse_Arhitecture/src/gold/selecting/)
     - [schemas](./Data_Warehouse_Arhitecture/src/schemas/)
     - [silver](./Data_Warehouse_Arhitecture/src/silver/)
       - [creating](./Data_Warehouse_Arhitecture/src/silver/creating/)
       - [inserting](./Data_Warehouse_Arhitecture/src/silver/inserting/)
-      - [selecting](./Data_Warehouse_Arhitecture/src/silver/selecting/)
 - [ETL_pipeline](./ETL_pipeline/)
   - [src](./ETL_pipeline/src/)
     - [extract](./ETL_pipeline/src/extract/)

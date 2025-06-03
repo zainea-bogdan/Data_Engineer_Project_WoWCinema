@@ -1,5 +1,25 @@
 # Business Requirements
 
+## Overview
+
+The `Business_Requirements` folder outlines the core analytical goals of the WoWCinema platform. It defines key business objectives, report specifications, and performance dashboards used to evaluate user engagement, subscription effectiveness, content performance, and genre preferences. This folder serves as the foundation for understanding what the platform aims to measure and optimize from a business perspective.
+
+It includes:
+
+- Clearly defined **core business goals**.
+- A detailed list of **reports** to be implemented in dashboards.
+- Descriptions of **dashboards** that group related reports by analytical theme.
+- A final section on **key performance indicators (KPIs)** that summarize platform performance based on the dashboards.
+
+Each section also includes an **optional bonus component** centered on **genre-based analysis**, providing deeper insights into content preferences across user segments and regions. While this genre-focused aspect can be updated or expanded in the future, the current repository work is primarily focused on the **first three core business goals**.
+
+## Table of Contents
+
+- [Core Business Goals](#core-business-goals)
+- [Reports](#reports)
+- [Dashboards](#dashboards)
+- [KPIs](#kpis)
+
 ## Core Business Goals
 
 1. **Viewer Engagement and Completion Analysis**
